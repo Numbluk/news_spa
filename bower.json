@@ -1,0 +1,21 @@
+{
+  "name": "news_spa",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/Numbluk/news_spa",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "^1.3.3",
+    "jquery": "^2.2.3",
+    "handlebars": "^4.0.5"
+  }
+}

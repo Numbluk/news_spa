@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet' href='/stylesheets/application.css')
+    script(src='https://cdn.firebase.com/js/client/2.2.1/firebase.js')
+    script(src='/javascripts/vendor/all.js')
+    script(src="/javascripts/handlebars_templates.js")
+    script(src="https://cdn.firebase.com/libs/backbonefire/0.5.1/backbonefire.min.js")
+  body
+    header
+      ul
+        li
+          a(id="show_user" href="#") User
+        li 
+          a(id="show_admin" href="#") Admin
+      h1 All The News
+
+    main
+      block content
+
+    script(src='/javascripts/models/article.js')
+    script(src='/javascripts/collections/articles.js')
+    script(src='/javascripts/application.js')
+    script(src='/javascripts/views/admin.js')
+    script(src='/javascripts/views/article.js')
+    script(src='/javascripts/views/user.js')
+    script(type='text/javascript').
+      app.init();

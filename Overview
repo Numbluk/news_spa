@@ -1,0 +1,47 @@
+Persistent news site SPA using Firebase
+
+Firebase is a way to have a persistent, back end database with real-time updates without the headache of creating and maintaining the back end yourself. A database is defined in Javascript using the URL of the database you've created and is then used similarly to a Backbone collection. You can set and get your models, sort by a specified property, reorder the data, and institute pagination by limiting the query to a set number of results. Firebase also has an event system that allows you to attach event callbacks to changes to your data. This can be used to ensure every user accessing the news site will automatically receive new articles and updates to existing articles.
+
+Start out by making your way through the Firebase tutorial at https://www.firebase.com/tutorial. This will familiarize you with how to initiate a database connection, set and retrieve data, and attach events to the database. From there, you'll set up a Firebase account to create a database for your new application. With the database created, you can start developing your Backbone single-page application using the Firebase database to read and store news articles.
+
+This application will ultimately be a single-page app on the front end and a second app to handle all of the article admin. You may choose to build the admin as a single page app as well, but it is not necessary.
+
+The key features to develop are:
+
+Admin:
+* New article form with fields for headline, teaser, full article, post date, and published boolean. Form will have two submit actions, Save as a draft and publish as an article
+* List view of all articles with ability to edit and delete an article
+* Edit article form
+
+Public:
+* Homepage displaying 10 most recent published articles, each showing headline, post date, and teaser
+* Render pagination that will use `startAt` and `endAt` to obtain the next or previous 10 articles
+* Clicking an article headline displays the article view with the full article attribute displayed in place of the teaser
+* Add events to respond to when an article is added, changed, or removed that will update the user's view accordingly
+	* If on the list page, add new articles at the top of the page, update any changed articles, remove any that have been removed
+	-- rerender user on change in collection
+	* If on the article show page, display a message indicating the article has been updated and ask them if they'd like to reload it. If removed, display a message indicating article has been removed in place of the current article content.
+
+Throughout this project, you'll be referencing the Firebase guide, most heavily within the "Retrieving Data" section. Here you will find information about the callbacks and how to obtain data within a pagination range. The full guide is at https://www.firebase.com/docs/web/guide/
+
+Yes, they should use an Express application as the base, so they can write their code in Jade and Stylus. They should also use the Grunt plugin to precompile their Handlebars templates, use Bower to manage their front end dependencies, and set up a concatenation and minification task in Grunt. For testing, they will want to use jasmine-node for unit testing their Firebase database, and either Jasmine within the HTML wrapper or the jquery-jasmine Grunt plugin to run integration tests headless.
+
+Admin Views:
+- Page
+- View/Edit/New Article
+
+Public Views:
+- Page
+- Article
+
+Models:
+- Article
+
+Collection
+- Articles
+
+When to hit Firebase?
+- On Article creation/editing/removing
+- On Article viewing
+
+- On Articles viewing

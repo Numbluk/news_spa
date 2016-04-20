@@ -1,0 +1,22 @@
+<div id="admin">
+  <h2>Administer</h2>
+  <a href="#" id="new_article">Add Article</a>
+
+  <ul>
+    {{#each articles}}
+      <li>
+        <div class="article" data-id="{{this.id}}">
+          <h3>{{this.headline}}</h3>
+          {{#if this.post_date}}
+          <small>{{secondsToDate this.post_date}}</small>
+          {{else}}
+          <small>Draft</small>
+          {{/if}}
+          <p>{{this.teaser}}</p>
+          <a class="edit_article" href="#">Edit</a>
+          <a class="delete_article" href="#">Delete</a>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</div>
